@@ -24,6 +24,7 @@ RUN --mount=type=bind,source=package.json,target=package.json \
     npm ci --include=dev
 
 # install nodemon for hot-reloading
+COPY .npmrc .
 RUN npm install -g nodemon
 
 # Copy the rest of the source files into the image.
